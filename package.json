@@ -4,7 +4,11 @@
   "description": "Twitter client for staying connected with Brighton and Hove Albion FC Team and Player news",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./backend/server.js",
+    "server": "nodemon ./backend/server.js --ignore client",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,17 @@
   "bugs": {
     "url": "https://github.com/benjaminsinaiko/tweetgulls/issues"
   },
-  "homepage": "https://github.com/benjaminsinaiko/tweetgulls#readme"
+  "homepage": "https://github.com/benjaminsinaiko/tweetgulls#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
 }
