@@ -1,0 +1,19 @@
+{
+  "name": "tweetgulls",
+  "version": "1.0.0",
+  "description": "Twitter client for staying connected with Brighton and Hove Albion FC Team and Player news",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjaminsinaiko/tweetgulls.git"
+  },
+  "author": "benjaminsinaiko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjaminsinaiko/tweetgulls/issues"
+  },
+  "homepage": "https://github.com/benjaminsinaiko/tweetgulls#readme"
+}
