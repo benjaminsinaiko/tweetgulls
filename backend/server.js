@@ -3,8 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
-const path = require('path');
 const bodyParser = require('body-parser');
+
+const tweets = require('./routes/tweets');
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use(
 app.use(bodyParser.json());
 
 // Routes
-require('./routes/tweets')(app, io);
+app.use('/api/tweets', tweets);
 
 const port = process.env.PORT || 3001;
 
