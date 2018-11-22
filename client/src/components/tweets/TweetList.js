@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Loading from '../common/Loading';
 import TweetCard from './TweetCard';
 import styles from './TweetList.module.css';
 
@@ -40,22 +41,31 @@ export class TweetList extends Component {
       <TweetCard key={index} tweet={tweet} />
     ));
 
-    let loading = (
-      <div>
-        <p className="flow-text">Listening to Streams</p>
-        <div className="progress lime lighten-3">
-          <div className="indeterminate pink accent-1" />
-        </div>
-      </div>
-    );
-
     return (
-      <div className={`row ${styles.TweetListBody}`}>
-        <div className="col s12 m4 14">
-          <h3>{this.state.searchTerm}</h3>
+      <div>
+        <div className={`row ${styles.TweetListBody}`}>
+          <div className="col s12 m4 14">
+            <h3>{this.state.searchTerm}</h3>
+          </div>
+          <div className="col s12 m4 14">
+            <div>{tweets.length > 0 ? tweetCard : <Loading />}</div>
+          </div>
         </div>
-        <div className="col s12 m4 14">
-          <div>{tweets.length > 0 ? tweetCard : loading}</div>
+
+        <button data-target="modal1" class="btn modal-trigger">
+          Modal
+        </button>
+
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+              Agree
+            </a>
+          </div>
         </div>
       </div>
     );
