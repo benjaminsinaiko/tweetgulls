@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import TweetCard from './TweetCard';
+import styles from './TweetList.module.css';
 
 export class TweetList extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export class TweetList extends Component {
     );
 
     return (
-      <div className="row">
+      <div className={`row ${styles.TweetListBody}`}>
         <div className="col s12 m4 14">
           <h3>{this.state.searchTerm}</h3>
         </div>

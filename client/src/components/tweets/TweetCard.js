@@ -1,8 +1,6 @@
 import React from 'react';
 
 const TweetCard = props => {
-  console.log('props - ', props);
-
   return (
     <div>
       <div className="card-panel grey lighten-5 z-depth-3 hoverable thin">
