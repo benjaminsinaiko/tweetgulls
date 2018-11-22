@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Footer from './components/layout/Footer';
 import TweetList from './components/tweets/TweetList';
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <TweetList />
+        <Footer />
       </div>
     );
   }

@@ -22,6 +22,7 @@ const TweetCard = props => {
           <a
             href={`https://twitter.com/${props.tweet.user.screen_name}`}
             target="_blank"
+            rel="noopener noreferrer"
           >{`@${props.tweet.user.screen_name}`}</a>
         </div>
         <div className="valign-wrapper right-align chip hoverable">

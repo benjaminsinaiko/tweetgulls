@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import Loading from '../common/Loading';
 import TweetCard from './TweetCard';
-import styles from './TweetList.module.css';
 
 export class TweetList extends Component {
   constructor(props) {
@@ -43,28 +42,12 @@ export class TweetList extends Component {
 
     return (
       <div>
-        <div className={`row ${styles.TweetListBody}`}>
+        <div className="row">
           <div className="col s12 m4 14">
             <h3>{this.state.searchTerm}</h3>
           </div>
           <div className="col s12 m4 14">
             <div>{tweets.length > 0 ? tweetCard : <Loading />}</div>
-          </div>
-        </div>
-
-        <button data-target="modal1" class="btn modal-trigger">
-          Modal
-        </button>
-
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">
-              Agree
-            </a>
           </div>
         </div>
       </div>
