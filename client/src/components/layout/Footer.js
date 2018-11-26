@@ -11,7 +11,7 @@ class Footer extends Component {
             styles.FooterButton
           }`}
         >
-          Tweets
+          BHAFC
         </a>
         <a
           className={`waves-effect waves-light btn black ${

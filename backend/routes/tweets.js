@@ -25,7 +25,7 @@ router.get('/test', (req, res) => {
 router.get('/', (req, res) => {
   twitter.get(
     'search/tweets',
-    { q: 'bhafc', count: 25 },
+    { q: '#BHAFC', count: 25 },
     (error, tweets, response) => {
       if (error) console.error(error);
       res.json(tweets);
@@ -38,8 +38,8 @@ router.get('/', (req, res) => {
 // @access  Public
 router.get('/team', (req, res) => {
   twitter.get(
-    'statuses/user_timeline',
-    { screen_name: 'huckabeej', count: 25 },
+    'lists/statuses',
+    { slug: 'first-team', owner_screen_name: 'ChicagoSeagulls', count: 50 },
     (error, tweets, response) => {
       if (error) console.error(error);
       res.json(tweets);

@@ -35,6 +35,7 @@ export class TweetList extends Component {
 
   render() {
     let tweets = this.state.tweets;
+    const ConvertSearchTerm = this.state.searchTerm.replace('%23', '#');
 
     let tweetCard = tweets.map((tweet, index) => (
       <TweetCard key={index} tweet={tweet} />
@@ -44,7 +45,7 @@ export class TweetList extends Component {
       <div>
         <div className="row">
           <div className="col s12 m4 14">
-            <h3>{this.state.searchTerm}</h3>
+            <h3>{ConvertSearchTerm}</h3>
           </div>
           <div className="col s12 m4 14">
             <div>{tweets.length > 0 ? tweetCard : <Loading />}</div>
