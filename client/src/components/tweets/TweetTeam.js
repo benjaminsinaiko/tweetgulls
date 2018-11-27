@@ -10,7 +10,7 @@ export class TweetList extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      searchTerm: '',
+      title: '',
       tweets: [],
       refreshUrl: ''
     };
@@ -18,13 +18,11 @@ export class TweetList extends Component {
 
   componentDidMount() {
     axios
-      .get('/api/tweets')
+      .get('/api/tweets/team')
       .then(response => {
         this.setState({
-          searchTerm: response.data.search_metadata.query
-        });
-        this.setState({ tweets: response.data.statuses });
-        this.setState({
+          title: response.data.search_metadata.query,
+          tweets: response.data.statuses,
           refreshUrl: response.data.search_metadata.refresh_url
         });
       })
@@ -35,7 +33,7 @@ export class TweetList extends Component {
 
   render() {
     let tweets = this.state.tweets;
-    const ConvertSearchTerm = this.state.searchTerm.replace('%23', '#');
+    const ConvertTitle = this.state.title.replace('%23', '#');
 
     let tweetCard = tweets.map((tweet, index) => (
       <TweetCard key={index} tweet={tweet} />
@@ -45,7 +43,7 @@ export class TweetList extends Component {
       <div>
         <div className="row">
           <div className="col s12 m4 14">
-            <h3>{ConvertSearchTerm}</h3>
+            <h3>{ConvertTitle}</h3>
           </div>
           <div className="col s12 m4 14">
             <div>{tweets.length > 0 ? tweetCard : <Loading />}</div>

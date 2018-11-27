@@ -1,6 +1,15 @@
 import React from 'react';
 
 const TweetCard = props => {
+  const img = props.tweet.entities.media ? (
+    <img
+      src={props.tweet.entities.media[0].media_url}
+      alt="Tweet"
+      width="75%"
+      height="75%"
+    />
+  ) : null;
+
   return (
     <div>
       <div className="card-panel grey lighten-5 z-depth-3 hoverable thin">
@@ -17,6 +26,8 @@ const TweetCard = props => {
             <span className="black-text">{props.tweet.text}</span>
           </div>
         </div>
+
+        <h3>{img}</h3>
 
         <div className="valign-wrapper right-align chip hoverable">
           <a

@@ -22,10 +22,10 @@ router.get('/test', (req, res) => {
 // @route   GET api/tweets/
 // @desc    Tests users route
 // @access  Public
-router.get('/', (req, res) => {
+router.get('/team', (req, res) => {
   twitter.get(
     'search/tweets',
-    { q: '#BHAFC', count: 25 },
+    { q: '#BHAFC', count: 50 },
     (error, tweets, response) => {
       if (error) console.error(error);
       res.json(tweets);
@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
 // @route   GET api/tweets/
 // @desc    Tests users route
 // @access  Public
-router.get('/team', (req, res) => {
+router.get('/players', (req, res) => {
   twitter.get(
     'lists/statuses',
     { slug: 'first-team', owner_screen_name: 'ChicagoSeagulls', count: 50 },
