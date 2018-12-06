@@ -1,0 +1,11 @@
+.LogoCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.Logo {
+  font-family: 'Neucha', cursive;
+  color: yellow;
+}
