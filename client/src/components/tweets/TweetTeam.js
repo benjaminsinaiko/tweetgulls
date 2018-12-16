@@ -4,7 +4,7 @@ import axios from 'axios';
 import Loading from '../common/Loading';
 import TweetCard from './TweetCard';
 
-export class TweetList extends Component {
+export class TweetTeam extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,4 +54,4 @@ export class TweetList extends Component {
   }
 }
 
-export default TweetList;
+export default TweetTeam;
