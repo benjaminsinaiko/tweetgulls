@@ -1,10 +1,35 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
+import TweetTeam from './TweetTeam';
+import TweetPlayers from './TweetPlayers';
 import { Button } from 'react-materialize';
 
 export class TweetFeed extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeFeed: <TweetTeam />
+    };
+  }
+
+  handleFeedPicker(e) {
+    console.log('this is:', e.target.innerHTML);
+    if (e.target.innerHTML === 'person') {
+      this.setState({
+        activeFeed: <TweetPlayers />
+      });
+    }
+
+    if (e.target.innerHTML === 'group') {
+      this.setState({
+        activeFeed: <TweetTeam />
+      });
+    }
+  }
+
   render() {
+    let feed = this.state.activeFeed;
+
     const feedPicker = (
       <Button
         floating
@@ -14,17 +39,26 @@ export class TweetFeed extends Component {
         large
         style={{ bottom: '45px', right: '24px' }}
       >
-        <Link to="/players">
-          <Button floating icon="person" className="green" />
-        </Link>
-        <Link to="/team">
-          <Button floating icon="group" className="yellow darken-1" />
-        </Link>
+        <Button
+          onClick={e => this.handleFeedPicker(e)}
+          floating
+          icon="person"
+          className="green"
+        />
+
+        <Button
+          onClick={e => this.handleFeedPicker(e)}
+          floating
+          icon="group"
+          className="yellow darken-1"
+        />
       </Button>
     );
     return (
       <div>
         <p>Tweet Feed</p>
+
+        {feed}
 
         {feedPicker}
       </div>
