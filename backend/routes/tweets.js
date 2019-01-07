@@ -25,7 +25,7 @@ router.get('/test', (req, res) => {
 router.get('/team', (req, res) => {
   twitter.get(
     'search/tweets',
-    { q: '#BHAFC', count: 50 },
+    { q: '@OfficialBHAFC+OR+#BHAFC', count: 50 },
     (error, tweets, response) => {
       if (error) console.error(error);
       res.json(tweets);
