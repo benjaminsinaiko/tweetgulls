@@ -10,7 +10,6 @@ export class TweetPlayers extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      title: 'Player Tweets',
       tweets: []
     };
   }
@@ -38,9 +37,7 @@ export class TweetPlayers extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col s12 m4 14">
-            <h3>{this.state.title}</h3>
-          </div>
+          <div className="col s12 m4 14" />
           <div className="col s12 m4 14">
             <div>{tweets.length > 0 ? tweetCard : <Loading />}</div>
           </div>

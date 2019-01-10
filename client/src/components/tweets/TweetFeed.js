@@ -56,8 +56,6 @@ export class TweetFeed extends Component {
     );
     return (
       <div>
-        <p>Tweet Feed</p>
-
         {feed}
 
         {feedPicker}

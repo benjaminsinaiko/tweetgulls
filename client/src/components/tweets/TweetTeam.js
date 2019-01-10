@@ -10,7 +10,6 @@ export class TweetTeam extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      title: '',
       tweets: [],
       refreshUrl: ''
     };
@@ -33,7 +32,6 @@ export class TweetTeam extends Component {
 
   render() {
     let tweets = this.state.tweets;
-    const ConvertTitle = this.state.title.replace('%23', '#');
 
     let tweetCard = tweets.map((tweet, index) => (
       <TweetCard key={index} tweet={tweet} />
@@ -42,9 +40,7 @@ export class TweetTeam extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col s12 m4 14">
-            <h3>{ConvertTitle}</h3>
-          </div>
+          <div className="col s12 m4 14" />
           <div className="col s12 m4 14">
             <div>{tweets.length > 0 ? tweetCard : <Loading />}</div>
           </div>
